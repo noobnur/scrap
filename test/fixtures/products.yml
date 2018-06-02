@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller: one
+  price: 
+  description: MyString
+  deadline: 2018-06-02
+  product_location: one
+  categories: 
+
+two:
+  seller: two
+  price: 
+  description: MyString
+  deadline: 2018-06-02
+  product_location: two
+  categories: 
