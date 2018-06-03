@@ -1,19 +1,38 @@
-<div class="content-lg container" style="width: 900px">
-  <br /><br /><br /><h1>New lesson</h1>
+<div class="bg">
+  <div class="container-3 w-container">
+    <div class="div-block-5">
+      <h1 class="heading2 center">Sell A Product</h1>
+      <div class="w-form">
+              <%= form_for @new_product, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+              <ul class="unordered-list-2">
+              <li class="listformitem w-clearfix">
+              <h1 class="heading3">Category:</h1><br/>
+              <%= select_tag "Category", options_from_collection_for_select(Category.all, :id, :name), {:class=>'form-control text-field-2 w-input', :prompt => 'Select Category'} %>
+              </li>
 
-  <%= form_for @new_product, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name, required: true %>
-  <%= f.label :price %><br />
-  <%= f.number_field :price ,required: true  %>
-  <%= f.label :deadline %><br />
-  <%= f.date_field :deadline %>
-  <%= f.label :description %><br />
-  <%= f.text_area :description, size: "60x12", required: true %>
-  <%= f.label :location_id %><br />
-  <%= select_tag "Location", options_from_collection_for_select(Location.all, :id, :name), {:class=>'form-control', :prompt => 'Select Location'}  %>
-  <%= f.label :category_id %><br />
-  <%= select_tag "Category", options_from_collection_for_select(Category.all, :id, :name), {:class=>'form-control', :prompt => 'Select Category'}  %>
-  <%= f.submit "Create" %>
-<% end %>
-</div>
+            <li class="listformitem w-clearfix">
+              <h1 class="heading3">Name:</h1>
+              <%= f.text_field :name ,required: true, class: 'text-field-2 w-input' %>
+            </li>
+
+            <li class="listformitem w-clearfix">
+              <h1 class="heading3">Price:</h1>
+              <%= f.number_field :price ,required: true, class: 'text-field-2 w-input'  %>
+            </li >
+
+            <li class="listformitem w-clearfix">
+              <h1 class="heading3">Description:</h1>
+              <%= f.text_area :description, size: "60x12", required: true, class: 'text-field-2 w-input' %>
+            </li >
+
+            <li class="listformitem w-clearfix">
+              <h1 class="heading3">Self Pick Up Location:</h1>
+              <%= select_tag "Location", options_from_collection_for_select(Location.all, :id, :name), {:class=>'form-control text-field-2 w-input', :prompt => 'Select Location'} %>
+            </li >
+
+            <%= f.submit "Create", :class => 'button-6 w-button' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

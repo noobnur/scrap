@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @all_lessons = Lesson.all.order('created_at DESC')
+     @all_products = Product.all.order('created_at DESC')
     # find_lesson
     # @booking = Booking.find_by_lesson_id(params[:id])
     # # render json: @booking
@@ -23,10 +23,8 @@ class ProductsController < ApplicationController
 
   def create
 
-     @new_product= Product.new(product_params)
+    @new_product= Product.new(product_params)
 
-     # @nproduct = Product.new(params[:name][:price][:description][:Category])
-    #@n_product = Product.new product_params
     @new_product.user_id = current_user.id
     @new_product.location_id = params[:Location]
     @new_product.category_id = params[:Category]
