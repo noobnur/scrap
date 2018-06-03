@@ -15,28 +15,12 @@
         <a href="#" class="brand w-nav-brand"></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div data-delay="0" class="w-dropdown">
-            <div class="dropdown-toggle w-dropdown-toggle">
-              <div class="icon w-icon-dropdown-toggle"></div>
-              <div class="text-block">Categories</div>
-            </div>
-            <nav class="w-dropdown-list">
-              <a href="#" class="w-dropdown-link">Link 1</a>
-              <a href="#" class="w-dropdown-link">Link 2</a>
-              <a href="#" class="w-dropdown-link">Link 3</a>
-            </nav>
           </div>
         </nav>
-
-        <form action="/search" class="search w-clearfix w-form" method="post">
-          <input type="search" class="search-input w-input" maxlength="256" name="query" placeholder="Search…" id="search" required="">
-          <input type="submit" value="Search" class="search-button w-button">
-        </form>
-
-        <%= form_tag(search_path method: :get) do %>
-        <%= text_field_tag :name, params[:name] %>
-        <%= submit_tag 'Search' %>
+        <%= form_tag(search_path, {class: 'search w-clearfix w-form'}) do %>
+        <%= text_field_tag :name, params[:name], class: 'search-input w-input', placeholder: 'Search…', maxlength: '256'  %>
+        <%= submit_tag 'Search', :class => 'search-button' %>
       <% end %>
-
       <nav role="navigation" class="nav-menu-2 w-clearfix w-nav-menu">
         <a href="#" class="link-4"></a><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" class="image-2">
         <% if user_signed_in? %>

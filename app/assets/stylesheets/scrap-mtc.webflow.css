@@ -70,7 +70,7 @@
 
 .bg {
   height: auto;
-  margin-top: 90px;
+  /* margin-top: 90px; */
   margin-bottom: 0px;
   padding-top: 40px;
   padding-bottom: 67px;
@@ -126,7 +126,7 @@
 }
 
 .productname {
-  height: 60px;
+  /* height: 60px; */
   margin-top: 0px;
   color: #242424;
   font-size: 15px;

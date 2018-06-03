@@ -1,20 +1,21 @@
-<div class="content-lg container">
+<%# <div class="content-lg container">
   <div class="row">
     <div class="col-sm-6">
       <h2>Products</h2>
     </div>
   </div>
+   %>
 
   <div class="row">
     <div class="bg">
   <div class="container-2 w-container">
-    <h1 class="heading2">Used Phones</h1>
+    <%# <h1 class="heading2">Used Phones</h1> %>
     <div class="productrow w-row">
 
       <% @queryProducts.each do |product| %>
         <div class="column w-col w-col-3">
           <div class="itemdiv">
-            <div class="div-block"><img src="iPhone-64-720x462.jpg" class="productimage"></div>
+            <div class="div-block"><img src="<%= product.img_url %>"  class="productimage"></div>
             <div class="productinfo w-clearfix">
               <h4 class="productname"><%= product.name %></h4>
               <h4 class="sellername">Seller: <%= product.user.username %></h4>
