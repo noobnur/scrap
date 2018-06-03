@@ -22,20 +22,41 @@
         <%= submit_tag 'Search', :class => 'search-button' %>
       <% end %>
       <nav role="navigation" class="nav-menu-2 w-clearfix w-nav-menu">
-        <a href="#" class="link-4"></a><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" class="image-2">
-        <% if user_signed_in? %>
-          <a href="#" class="nav-link w-nav-link"><%= current_user.username %></a>
-          |
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-          |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-          |
-          <a href="#" class="button w-button">Sell</a>
+      <%# <a href="#" class="link-4"></a><img src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg" class="image-2"> %>
+
+        <nav role="navigation" class="nav-menu w-nav-menu">
+        <div data-delay="0" class="w-dropdown">
+          <div class="dropdown-toggle w-dropdown-toggle">
+            <div class="icon w-icon-dropdown-toggle"></div>
+            <div class="text-block"><%= current_user.username %></div>
+          </div>
+
+          <nav class="w-dropdown-list">
+            <% if user_signed_in? %>
+            <a href="/products/new" class="button w-button">Sell</a>
+            <a href="#" class="w-dropdown-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></a>
+            <a href="#" class="w-dropdown-link"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></a>
+            <% else %>
+            <a href="#" class="w-dropdown-link"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></a>
+            <a href="#" class="w-dropdown-link"><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></a>
+            <% end %>
+          </nav>
+        </div>
+      </nav>
+      <%#  <% if user_signed_in? %>
+        <%#  <a href="#" class="nav-link w-nav-link"><%= current_user.username %></a>
+          <%#|
+          <%#<%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+          <%#|
+          <%#<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+          <%#|
+          <%#<a href="/products/new" class="button w-button">Sell</a>
+
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
-          |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
-        <% end %>
+        <%#  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
+          <%#|
+        <%#  <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+      <%#  <% end %>
 
       </nav>
       <div class="w-nav-button">

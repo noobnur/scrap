@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/search', to: 'pages#home'
   post '/search', to: 'pages#home'
+  get '/articles', to: 'pages#article'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
